@@ -6,10 +6,10 @@
 trigger:
 - master
 
-stages:
-- stage: Build
+ stages:
+ -stage: Build
   jobs:
-  - job: Build
+   -job: Build
  
       pool:
       vmImage: 'ubuntu-latest'
@@ -26,9 +26,9 @@ stages:
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
  
-- stage: Deploy
+   -stage: test
   jobs:
-    - job: test
+    -job: test
  
       pool:
       vmImage: 'ubuntu-latest'
